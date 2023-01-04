@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Nhà xe</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="container.css">
+    
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="book-ticket">
+            <div class="check-box">
+                <input type="radio" id="one-way" name="rt">
+                <label for="one-way" class="one-way-label">Một Chiều</label>
+                <input type="radio" id="roundtrip" name="rt">
+                <label for="roundtrip" class="roundtrip-label">Khứ hồi</label>
+            </div>
+            <div class="booking-select-box">
+                <div class="select-place">
+                    <div class="auto-select">
+                        <label for="" class="title-select-place">Điểm đi</label>
+                        <input type="search" placeholder="Chọn điểm đi" id="select-origin" class="select" onclick="selectPlace()">
+                        <div class="list-group" id="listData"></div>
+                    </div>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACTUExURf///+9RHN7k6Pj5+t3j6Pz9/f///97i6Obp7eLm6t7k597i6Ort8Ovr6/v8/P7+/vr7/N3p6e3v8fP19+Pj6uzv8d7j597j5/f4+d7j5+Hl6t3j6N7j6N/j6PSGY+rt7+Tk5PBWI/BTH/epkfiqkvirk/iwmviynP3p4t/j6d3i6P3p4/BVIvBXJP3n4PeokEdwTMlG7ekAAAAxdFJOU///f//z/wGq//5S6P8M////Fv//I/9y2f+l/7/Tgv//Cf//////////g/L//////wDIpbVhAAABPklEQVQ4y5WV15qDIBCFR8Dee09i6ibbfP+nW7L7xYyuKDlXlF8HhuEA/UhJVtY5Y3ldZsl4BlA7bJsqjYvA94MiTqumDWdBl7CIAhKNGHH/g5bteDCR59jWBNSISWFG1CQaBne6ocKsVEPfPUFN34JQW10bQGLAggzyAC1TXQJV0/oDXZvCoqjt/oLEgRU55A6GzFsDPRZy8BrBqqKWg41ghe94lU0PSSX4y+cBdaoEslQAfiiITDMo4ymxUR46D2NxCXUhBi/DWFFDHghC75XTsxPkwHw8+/Zsdkc07jO4YfDYzX7Dwdso9EnZC9bBQ6PNXIZdbKYg3wxKz1kM8vTghB+EoXnCR0f43QlAfoTjovgSlC4vir6VLTPpwpW+CvKXS/q6yhuAvKVIm5S87ckb6QvWfDf7q5TZrzwfP7TlSKhNtCqwAAAAAElFTkSuQmCC"
+                        alt="change" width="40" height="40" class="switch-img">
+                    <div class="auto-select">
+                        <label for="" class="title-select-place">Điểm đến</label>
+                        <input type="search" placeholder="Chọn điểm đến" id="select-destination" class="select">
+                    </div>
+                </div>
+                <div class="select-date">
+                    <div class="select-from-date">
+                        <label for="" class="title-date">Ngày đi</label>
+                        <div class="control">
+                            <div class="form-control">
+                                <input type="date" placeholder="31/12/2022" class="date">
+                            </div> 
+                            
+                        </div>
+                    </div>
+                    <div class="select-return-date">
+                        <label for="" class="title-date">Ngày về</label>
+                        <div class="control">
+                            <div class="form-control disabled">
+                                <input type="date" placeholder="31/12/2022" class="date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="find-routes">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                Tìm chuyến xe
+            </button>
+        </div>
+        <button type="button" onclick="ShowPopulorTour()">Click</button>
+        <div class="items-popular-routes">
+            <p class="title-routes-popular">TUYẾN PHỔ BIẾN</p>
+            <div class="list-item">
+                <div class="row" id="list-popular-routes"></div>
+            </div>
+        </div>   
+    </div>
+
+    <script src="function.js"></script>
+    <script src="data.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
