@@ -17,6 +17,9 @@
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+    <script src="function.js"></script>
+    <script src="data.js"></script>
+
 </head>
 
 <body>
@@ -62,14 +65,17 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="find-routes">
+            <button type="button" class="find-routes" onclick="procedure()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                 </svg>
                 Tìm chuyến xe
             </button>
         </div>
-        <button type="button" onclick="ShowPopulorTour()">Click</button>
+        <div class="img-go">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXVvPTcKUEr8oXsWSvYmKwl3q7qwYAM10w36sXj_f04y7tmwqPX8hjZpPKDaIV6B_OoaE&usqp=CAU">
+        </div>
+
         <div class="items-popular-routes">
             <p class="title-routes-popular">TUYẾN PHỔ BIẾN</p>
             <div class="list-item">
@@ -77,9 +83,10 @@
             </div>
         </div>   
     </div>
-
-    <script src="function.js"></script>
-    <script src="data.js"></script>
+    <script>
+        showPopulorTour();
+    </script>
+    
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

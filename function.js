@@ -7,39 +7,13 @@ function Load() {
 
 Load();
 Save();
- 
-function selectPlace() {
-    var listplace = '';
-    for (var i in tour) {
-        var data = JSON.parse(JSON.stringify(tour[i]));
-        listplace += '<button type="button" class="list-group-item list-group-item-action" onclick="selectItem('+ data.orign +')" >' + data.orign + '</button>';
-    }
-    document.getElementById("listData").innerHTML = listplace;
-};
 
-function selectItem(i) {
-    console.log(i);
-    document.getElementById("select-origin").innerHTML=i;
-};
-
-function selectDestination() {
-    var destination = '' ;
-    var start = document.getElementById("select-origin").value; 
-    for (var i in tour) {
-        var data = JSON.parse(JSON.stringify(tour[i]));
-        if (start == data.orign) {
-            destination += '<button type="button" class="list-group-item list-group-item-action" onclick="selectItem('+ data.destination +')" >' + data.destination + '</button>';
-        }
-        document.getElementById("listDestination").innerHTML = destination;
-    }
-}
-
-var ShowPopulorTour = function() {
+var showPopulorTour = function() {
     var listroutes = '';
     for (var j in tour) {
         var data = JSON.parse(JSON.stringify(tour[j]));
         if (data.id > 40) {
-            listroutes += '<div class="col-sm-4 col-xs-12 col-ms-12 col-md-6 item-routes ">';
+            var listroutes = '<div class="col-sm-4 col-xs-12 col-ms-12 col-md-6 item-routes ">';
             listroutes += '<button class="btn-items">';
             listroutes += '<img src="' + data.img + '" class="image" style="min-width: 160px; min-height:76px">';
             listroutes += '<div class="body-items">';
@@ -71,10 +45,39 @@ var ShowPopulorTour = function() {
             listroutes += '</button>';
             listroutes += '</div>';
 
+            document.getElementById("list-popular-routes").innerHTML += listroutes;
         }
     }
-    document.getElementById("list-popular-routes").innerHTML = listroutes;
+};
+showPopulorTour();
+
+
+function selectPlace() {
+    var listplace = '';
+    for (var i in tour) {
+        var data = JSON.parse(JSON.stringify(tour[i]));
+        listplace += '<button type="button" class="list-group-item list-group-item-action" onclick="selectItem(' + data.orign + ')" >' + data.orign + '</button>';
+    }
+    document.getElementById("listData").innerHTML = listplace;
+};
+
+function selectItem(i) {
+    console.log(i);
+    document.getElementById("select-origin").innerHTML=i;
+};
+
+function selectDestination() {
+    var destination = '' ;
+    var start = document.getElementById("select-origin").value; 
+    for (var i in tour) {
+        var data = JSON.parse(JSON.stringify(tour[i]));
+        if (start == data.orign) {
+            destination += '<button type="button" class="list-group-item list-group-item-action" onclick="selectItem('+ data.destination +')" >' + data.destination + '</button>';
+        }
+        document.getElementById("listDestination").innerHTML = destination;
+    }
 }
 
-ShowPopulorTour();
-
+function procedure() {
+    window.location.href="http://127.0.0.1:3000/procedure.html";
+}
